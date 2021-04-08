@@ -1,14 +1,17 @@
 import random
 def primary():
-  print("Keep it logically awesome.")
+  with open('quotes.txt','a') as f:
+    f.write('Blah')
+    f.write('This is not a line')
 
   f = open("quotes.txt")
   quotes = f.readlines()
   f.close()
 
   last = 13
-  rnd = random.randint(0, last)
-  print(quotes[rnd])
+  rnd = lambda x:random.randint(x, last)
+  a= rnd(0)
+  print('\n'.join(quotes[a:rnd(a)]))
 
 if __name__== "__main__":
   primary()
